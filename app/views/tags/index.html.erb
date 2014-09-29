@@ -1,0 +1,14 @@
+<h1>All Tags</h1>
+
+<ul id="tags">
+  <% @articles.each do |article|
+      unless article.tags.empty?
+        article.tags.each do |tag| %>
+    <li>
+      <%= link_to article.title, article_path(article),
+          class: 'article_title', id: "article_#{article.id}" %>
+    </li>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
